@@ -8,11 +8,11 @@ import java.util.List;
  */
 public class Cliente extends Persona{
     private int estado;
-    private static List<Cliente> lista=new ArrayList<>();
+    private static List<Cliente> lista=new ArrayList<Cliente>();
 
-    public Cliente(String nom, String apell, String id, int est){
-        super(nom,apell,id);
-        this.estado=est;
+    public Cliente(String nombre, String apellido, String id, int estado){
+        super(nombre,apellido,id);
+        this.estado=estado;
     }
 
     public void crear(Cliente cl){
@@ -24,31 +24,30 @@ public class Cliente extends Persona{
     }
 
     public Cliente read(String id){
-        Cliente c=null;
-        for(Cliente d : indice()){
-            if(d.getId()==id){
-                c=d;
+        Cliente cliente=null;
+        for(Cliente clienteItem : lista){
+            if(clienteItem.getId()==id){
+                cliente=clienteItem;
                 System.out.println("Cliente encontrado");
             }
         }
-        return c;
+        return cliente;
     }
 
-    public void update(String id){
-        Cliente c=null;
-        for(Cliente d : indice()){
-            if(d.getId()==id){
-                c=d;
+    public void update(String id, int estado){
+        for(Cliente clienteItem : lista){
+            if(clienteItem.getId()==id){
+                this.estado=estado;
             }
         }
-        c.setEstado(Estado);
         System.out.println("Estado actualizado");
     }
 
+
     public void delete(String id){
-        for(Cliente d : indice()){
-            if(d.getId()==id){
-                indice().remove(d);
+        for(Cliente cliente : lista){
+            if(cliente.getId()==id){
+                lista.remove(cliente);
             }
         }
     }
@@ -57,7 +56,7 @@ public class Cliente extends Persona{
         return estado;
     }
 
-    public void setEstado(int est){
-        this.estado=est;
+    public void setEstado(int estado){
+        this.estado=estado;
     }
 }

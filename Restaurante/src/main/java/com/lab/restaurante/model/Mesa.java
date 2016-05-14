@@ -9,24 +9,24 @@ public class Mesa {
 
     public Mesa(){}
 
-    public Mesa(int ID, int est){
-        this.id=ID;
-        this.estado=est;
+    public Mesa(int id, int estado){
+        this.id=id;
+        this.estado=estado;
     }
 
     public int getId(){
         return id;
     }
 
-    public void setId(int ID){
-        this.id=ID;
+    public void setId(int id){
+        this.id=id;
     }
 
     public int getEstado(){
         return estado;
     }
 
-    public void setEstado(int est){
-        this.estado=est;
+    public void setEstado(int estado){
+        this.estado=estado;
     }
 }

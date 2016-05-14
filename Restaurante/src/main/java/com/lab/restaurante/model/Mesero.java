@@ -8,11 +8,11 @@ import java.util.List;
  */
 public class Mesero extends Persona {
     private long dni;
-    private static List<Mesero> lista=new ArrayList<>();
+    private static List<Mesero> lista=new ArrayList<Mesero>();// se agrega Mesero en ArrayList
 
-    public Mesero(String nom, String apell, String id, long DNI){
-        super(nom,apell,id);
-        this.dni=DNI;
+    public Mesero(String nombre, String apellido, String id, long dni){//se cambia DNI por dni, nombre, apellido
+        super(nombre,apellido,id);
+        this.dni=dni;
     }
 
     public void crear(Mesero ms){
@@ -24,31 +24,29 @@ public class Mesero extends Persona {
     }
 
     public Mesero read(String id){
-        Mesero m=null;
-        for(Mesero p : indice()){
-            if(p.getId()==id){
-                m=p;
+        Mesero mesero=null;
+        for(Mesero meseroItem : lista){
+            if(meseroItem.getId()==id){
+                mesero=meseroItem;
                 System.out.println("Mesero encontrado");
             }
         }
-        return m;
+        return mesero;
     }
 
-    public void update(String id){
-        Mesero m=null;
-        for(Mesero p : indice()){
-            if(p.getId()==id){
-                m=p;
+    public void update(String id, long dni){
+        for(Mesero meseroItem : lista){
+            if(meseroItem.getId()==id){
+                this.dni=dni;
             }
         }
-        m.setDni(DNI);
         System.out.println("Mesero actualizado");
     }
 
     public void delete(String id){
-        for(Mesero p : indice()){
-            if(p.getId()==id){
-                indice().remove(p);
+        for(Mesero mesero : lista){
+            if(mesero.getId()==id){
+                lista.remove(mesero);
             }
         }
     }

@@ -10,33 +10,33 @@ public class Persona {
 
     public Persona(){}
 
-    public Persona(String nom, String apell, String ID){
-        this.nombre=nom;
-        this.apellido=apell;
-        this.id=ID;
+    public Persona(String nombre, String apellido, String id){
+        this.nombre=nombre;
+        this.apellido=apellido;
+        this.id=id;
     }
 
     public String getNombre(){
         return nombre;
     }
 
-    public void setNombre(String nom){
-        this.nombre=nom;
+    public void setNombre(String nombre){
+        this.nombre=nombre;
     }
 
     public String getApellido(){
         return apellido;
     }
 
-    public void setApellido(String apell){
-        this.apellido=apell;
+    public void setApellido(String apellido){
+        this.apellido=apellido;
     }
 
     public String getId(){
         return id;
     }
 
-    public void setId(String ID){
-        this.id=ID;
+    public void setId(String id){
+        this.id=id;
     }
 }
