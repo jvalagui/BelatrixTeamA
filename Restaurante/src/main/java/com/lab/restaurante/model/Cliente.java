@@ -35,7 +35,14 @@ public class Cliente extends Persona{
     }
 
     public void update(String id){
-
+        Cliente c=null;
+        for(Cliente d : indice()){
+            if(d.getId()==id){
+                c=d;
+            }
+        }
+        c.setEstado(Estado);
+        System.out.println("Estado actualizado");
     }
 
     public void delete(String id){
