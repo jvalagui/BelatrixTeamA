@@ -35,7 +35,14 @@ public class Mesero extends Persona {
     }
 
     public void update(String id){
-
+        Mesero m=null;
+        for(Mesero p : indice()){
+            if(p.getId()==id){
+                m=p;
+            }
+        }
+        m.setDni(DNI);
+        System.out.println("Mesero actualizado");
     }
 
     public void delete(String id){
