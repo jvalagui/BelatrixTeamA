@@ -15,8 +15,8 @@ public class Cliente extends Persona{
         this.estado=estado;
     }
 
-    public void crear(Cliente cl){
-        lista.add(cl);
+    public void crear(Cliente cliente){
+        lista.add(cliente);
     }
 
     public static List<Cliente> indice(){
