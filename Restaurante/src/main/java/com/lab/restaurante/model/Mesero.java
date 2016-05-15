@@ -15,8 +15,8 @@ public class Mesero extends Persona {
         this.dni=dni;
     }
 
-    public void crear(Mesero ms){
-        lista.add(ms);
+    public void crear(Mesero mesero){
+        lista.add(mesero);
     }
 
     public static List<Mesero> indice(){
@@ -55,8 +55,8 @@ public class Mesero extends Persona {
         return dni;
     }
 
-    public void setDni(long DNI){
-        this.dni=DNI;
+    public void setDni(long dni){
+        this.dni=dni;
     }
 
 }
