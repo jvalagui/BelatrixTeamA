@@ -19,36 +19,38 @@ public class Mesero extends Persona {
         lista.add(mesero);
     }
 
-    public static List<Mesero> indice(){
-        return lista;
-    }
-
-    public Mesero read(String id){
-        Mesero mesero=null;
+    public void read(String id){
+        Mesero meseroEncontrado=null;
         for(Mesero meseroItem : lista){
             if(meseroItem.getId()==id){
-                mesero=meseroItem;
+                meseroEncontrado=meseroItem;
                 System.out.println("Mesero encontrado");
+                System.out.println("Nombre: "+meseroEncontrado.getNombre());
+                System.out.println("Apellido: "+meseroEncontrado.getApellido());
+                System.out.println("ID: "+meseroEncontrado.getId());
+                System.out.println("DNI: "+meseroEncontrado.getDni());
+            }
+            else{
+                System.out.println("Mesero no encontrado");
             }
         }
-        return mesero;
     }
 
-    public void update(String id, long dni){
+    public void update(long dni) { this.dni=dni; }
+
+
+    public void delete(Mesero mesero){
+        lista.remove(mesero);
+    }
+
+    public Mesero buscar(String id){
+        Mesero meseroEncontrado=null;
         for(Mesero meseroItem : lista){
             if(meseroItem.getId()==id){
-                this.dni=dni;
+                meseroEncontrado=meseroItem;
             }
         }
-        System.out.println("Mesero actualizado");
-    }
-
-    public void delete(String id){
-        for(Mesero mesero : lista){
-            if(mesero.getId()==id){
-                lista.remove(mesero);
-            }
-        }
+        return meseroEncontrado;
     }
 
     public long getDni(){

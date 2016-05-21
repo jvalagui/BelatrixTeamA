@@ -23,33 +23,38 @@ public class Cliente extends Persona{
         return lista;
     }
 
-    public Cliente read(String id){
-        Cliente cliente=null;
+    public void read(String id){
+        Cliente clienteEncontrado=null;
         for(Cliente clienteItem : lista){
             if(clienteItem.getId()==id){
-                cliente=clienteItem;
-                System.out.println("Cliente encontrado");
+                clienteEncontrado=clienteItem;
+                System.out.println("Mesero encontrado");
+                System.out.println("Nombre: "+clienteEncontrado.getNombre());
+                System.out.println("Apellido: "+clienteEncontrado.getApellido());
+                System.out.println("ID: "+clienteEncontrado.getId());
+                System.out.println("Estado: "+clienteEncontrado.getEstado());
+            }
+            else{
+                System.out.println("Cliente no encontrado");
             }
         }
-        return cliente;
     }
 
-    public void update(String id, int estado){
+    public void update(int estado) { this.estado=estado; }
+
+
+    public void delete(Cliente cliente){
+        lista.remove(cliente);
+        }
+
+    public Cliente buscar(String id){
+        Cliente clienteEncontrado=null;
         for(Cliente clienteItem : lista){
             if(clienteItem.getId()==id){
-                this.estado=estado;
+                clienteEncontrado=clienteItem;
             }
         }
-        System.out.println("Estado actualizado");
-    }
-
-
-    public void delete(String id){
-        for(Cliente cliente : lista){
-            if(cliente.getId()==id){
-                lista.remove(cliente);
-            }
-        }
+        return clienteEncontrado;
     }
 
     public int getEstado(){
